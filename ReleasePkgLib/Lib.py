@@ -459,7 +459,7 @@ def Copy_Release_Files_AMD(sourceFolder, targetFolder, NewVersion):
                 print(sourceFolder + "\\Combined\\" + name + " to " + targetFolder + "\\Capsule" + " Copy succeeded.")
     # Bin file copy to FPTW&Global.
     for name in os.listdir(source_fullpath):# Bin file copy to FPTW&Global
-        if Platform_Flag(name) in AMD_Platforms: # 78 AMD 78 R26 78787878787878
+        if Platform_Flag(name) in AMD_Platforms or Platform_Flag(name) in AMD_ProjectID : # 78 AMD 78 R26 78787878787878
             if NewVersion + "_16.bin" in name:
                 copy(source_fullpath + name, target_fullpath + "\\AMDFLASH")
                 print(sourceFolder + "\\" + name + " to " + targetFolder + "\\AMDFLASH" +" Copy succeeded.")
